@@ -1,0 +1,23 @@
+#pragma once
+
+enum GameGenre {
+    ACTION,
+    INDIE,
+    ADVENTURE,
+    RPG,
+    STRATEGY,
+    SHOOTER,
+    CASUAL,
+    SIMULATION,
+    PUZZLE,
+    ARCADE,
+    PLATFORMER,
+    MASSIVELY_MULTIPLAYER,
+    RACING,
+    SPORTS,
+    FIGHTING,
+    FAMILY,
+    BOARD_GAME,
+    CARD,
+    EDUCATIONAL
+};

@@ -1,0 +1,15 @@
+#pragma once
+
+enum GameStore{
+    STEAM,
+    PLAYSTATION_STORE,
+    XBOX_STORE,
+    APP_STORE,
+    EPIC_GAMES,
+    GOG,
+    UBISOFT,
+    NINTENDO_SWITCH_STORE,
+    MICROSOFT_STORE,
+    GOOGLE_PLAY,
+    OTHER_STORE
+};
