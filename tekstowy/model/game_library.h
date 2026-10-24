@@ -22,11 +22,14 @@ public:
     Game *findGameById(int id);
     const Game *findGameById(int id) const;
     const std::vector<Game> &getGames() const;
+    std::vector<Game> getLibraryGames() const;
+    std::vector<Game> getWishlistedGames() const;
     std::size_t getGameCount() const;
-    void GameLibrary::addCollection(const std::string &name);
+    void addCollection(const std::string &name);
     std::vector<Game> getSortedGames(
         GameSortCriteria criteria,
         SortOrder order = SortOrder::ASCENDING) const;
     std::vector<Game> getFilteredGames(
         const GameFilter &filter) const;
+    int getNextId() const;
 };

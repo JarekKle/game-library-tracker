@@ -40,6 +40,28 @@ const Game* GameLibrary::findGameById(int id) const{
 const std::vector<Game>& GameLibrary::getGames() const{
     return mGameLibrary;
 }
+    std::vector<Game> GameLibrary::getLibraryGames() const{
+            std::vector<Game> result;
+
+    for (const Game& game : mGameLibrary) {
+        if (game.getAvailability() != GameAvailability::WISHLISTED) {
+            result.push_back(game);
+        }
+    }
+
+    return result;
+    }
+    std::vector<Game> GameLibrary::getWishlistedGames() const{
+        std::vector<Game> result;
+
+    for (const Game& game : mGameLibrary) {
+        if (game.getAvailability() == GameAvailability::WISHLISTED) {
+            result.push_back(game);
+        }
+    }
+
+    return result;
+    }
 std::size_t GameLibrary::getGameCount() const {
     return mGameLibrary.size();
 }
@@ -133,4 +155,13 @@ std::vector<Game> GameLibrary::getFilteredGames(
     );
 
     return result;
+}
+int GameLibrary::getNextId() const {
+    int maxId = 0;
+    for (const Game& game : mGameLibrary) {
+        if (game.getId() > maxId) {
+            maxId = game.getId();
+        }
+    }
+    return maxId + 1;
 }

@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <algorithm>
 
 #include "game_platform.h"
 #include "game_store.h"
@@ -48,7 +49,19 @@ public:
         GameAvailability game_availability = BOUGHT,
         bool installed = true
     );
-
+    Game(
+        int id,
+        const std::string& title,
+        const std::string& developer = "Unknown",
+        const std::string& publisher = "Unknown",
+        int achievementCount = -1,
+        int metacriticRating = 0,
+        const std::vector<GameGenre>& genres = {},
+        GameStore game_store = STEAM,
+        GamePlatform game_platform = PC,
+        GameStatus game_status = PLAN_TO_PLAY,
+        GameAvailability game_availability = WISHLISTED
+    );
     int getId() const;
     std::string getTitle() const;
     std::string getDeveloper() const;

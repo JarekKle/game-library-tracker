@@ -36,7 +36,37 @@ Game::Game(
       mInstalled(installed)
 {
 }
-
+Game::Game(
+    int id,
+    const std::string& title,
+    const std::string& developer,
+    const std::string& publisher,
+    int achievementCount,
+    int metacriticRating,
+    const std::vector<GameGenre>& genres,
+    GameStore game_store,
+    GamePlatform game_platform,
+    GameStatus game_status,
+    GameAvailability game_availability
+)
+    : id(id),
+      mTitle(title),
+      mDeveloper(developer),
+      mPublisher(publisher),
+      mAchievementCount(achievementCount),
+      mUnlockedAchievements(0),
+      mPlaytime(0.0f),
+      mPersonalRating(0),
+      mMetacriticRating(metacriticRating),
+      mNotes({}),
+      mGenres(genres),
+      mStore(game_store),
+      mPlatform(game_platform),
+      mStatus(game_status),
+      mAvailability(game_availability),
+      mInstalled(false)
+{
+}
 int Game::getId() const {
     return id;
 }
